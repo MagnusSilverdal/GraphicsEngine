@@ -16,8 +16,10 @@ hantera wireframe och solid rendering, gärna med någon form av shading (ljuss�
 * Implementera algoritmer för att rita linjer
 * Skapa klasshierarki för de olika 2d-typerna
 * Implemenetera kopiering av flera pixlar (sprites och bilder)
+* Skapa ett system av tester och exempel för att visa de olika funktionerna i motorn
 
 # Done
+1. 2019-03-19 Implementerat den första 2d-primitiven, en punkt
 1. 2019-03-19 Implementerat en animeringslösning för att möjliggöra updatering av tillstånd och skärm (ups och fps)
 2. 2019-03-19 Implementerat en enkel mandelbrotgenerator
 3. 2019-03-19 Bestämmt färgen på en given pixel
