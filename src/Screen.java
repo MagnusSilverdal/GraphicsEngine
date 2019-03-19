@@ -31,9 +31,8 @@ public class Screen {
      * Renders all elements of the graphics. Called after the update-method is done updating all elements
      */
     public void render() {
-        Mandelbrot mb = new Mandelbrot(width,height);
-        mb.generateMandelbrot();
-        pixels = mb.getMandelbrotImage();
+        // Randomly scatter magenta coloured pixels on the screen
+        pixels[(int)(Math.random()*(height-1)*width + Math.random()*width)] = 0xFF00FF;
     }
 
     /**
@@ -42,5 +41,14 @@ public class Screen {
      */
     public int[] getPixels() {
         return pixels;
+    }
+
+    /**
+     * Calculate and generate a pixelarray representing the mandelbrot swet
+     */
+    private void generateMandelbrot() {
+        Mandelbrot mb = new Mandelbrot(width,height);
+        mb.generateMandelbrot();
+        pixels = mb.getMandelbrotImage();
     }
 }
