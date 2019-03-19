@@ -1,3 +1,5 @@
+import samples.Mandelbrot;
+
 /**
  * A class representing the pixel of the graphics as an integer-array. All updating and rendering
  * is done relative to this class
@@ -9,8 +11,8 @@ public class Screen {
 
     /**
      * Constructor for the Screen. Creates an array with all pixels of the display, width x height.
-     * @param w width och the screen
-     * @param h height oif the screen
+     * @param w width of the screen
+     * @param h height of the screen
      */
     public Screen(int w, int h) {
         this.width = w;
@@ -29,12 +31,9 @@ public class Screen {
      * Renders all elements of the graphics. Called after the update-method is done updating all elements
      */
     public void render() {
-        // Just a test. Draw a white square at (100,100), 100 pixels wide
-        for (int y = 100 ; y < 200 ; y++) {
-            for (int x = 100 ; x < 200 ; x++) {
-                pixels[y*width + x] = 0xFFFFFF;
-            }
-        }
+        Mandelbrot mb = new Mandelbrot(width,height);
+        mb.generateMandelbrot();
+        pixels = mb.getMandelbrotImage();
     }
 
     /**
