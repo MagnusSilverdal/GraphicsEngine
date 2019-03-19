@@ -16,12 +16,12 @@ hantera wireframe och solid rendering, gärna med någon form av shading (ljuss�
 * Implementera algoritmer för att rita linjer
 * Skapa klasshierarki för de olika 2d-typerna
 * Implemenetera kopiering av flera pixlar (sprites och bilder)
-* Implemnentera en animeringslösning för att möjliggöra updatering av tillstånd och skärm (ups och fps)
 
 # Done
-4. 2019-03-19 Implementerat en enkel mandelbrotgenerator
+1. 2019-03-19 Implementerat en animeringslösning för att möjliggöra updatering av tillstånd och skärm (ups och fps)
+2. 2019-03-19 Implementerat en enkel mandelbrotgenerator
 3. 2019-03-19 Bestämmt färgen på en given pixel
-2. 2019-03-19 Utformat ett system som får tillgång till grafikminnet
-1. 2019-03-19 Formulerat ett problem att lösa
+4. 2019-03-19 Utformat ett system som får tillgång till grafikminnet
+5. 2019-03-19 Formulerat ett problem att lösa
 
 # Versioner

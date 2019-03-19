@@ -1,3 +1,4 @@
+import TwoDPrimitives.Point;
 import samples.Mandelbrot;
 
 /**
@@ -32,7 +33,9 @@ public class Screen {
      */
     public void render() {
         // Randomly scatter magenta coloured pixels on the screen
-        pixels[(int)(Math.random()*(height-1)*width + Math.random()*width)] = 0xFF00FF;
+        Point p = new Point((int)(Math.random()*(width)),(int)(Math.random()*(height)),0xFF00FF);
+        p.draw(pixels,width);
+
     }
 
     /**
@@ -44,7 +47,7 @@ public class Screen {
     }
 
     /**
-     * Calculate and generate a pixelarray representing the mandelbrot swet
+     * Calculate and generate a pixelarray representing the mandelbrot set
      */
     private void generateMandelbrot() {
         Mandelbrot mb = new Mandelbrot(width,height);
