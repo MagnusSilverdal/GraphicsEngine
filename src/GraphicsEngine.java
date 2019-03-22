@@ -10,7 +10,7 @@ import java.awt.image.DataBufferInt;
  * replaced by another technique to access the graphics-hardware.
  */
 public class GraphicsEngine extends Canvas implements Runnable{
-    public static int WIDTH = 800;
+    public static int WIDTH = 1800;
     public static int HEIGTH = WIDTH*9/16;
     private String title;
     private JFrame frame;

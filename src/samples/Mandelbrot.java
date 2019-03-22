@@ -6,7 +6,7 @@ import java.awt.Color;
  * Class for simple mandelbrot generator. Boundaries on real and imaginary axises are adjustable
  * as is the size of the generated image
  */
-public class Mandelbrot {
+public class Mandelbrot implements Runnable{
     private double xmin = -1.5;
     private double xmax = 1.5;
     private double ymin = -1;
@@ -16,6 +16,9 @@ public class Mandelbrot {
     private int[] palette;
     private int maxIter = 1024;
     private int[] pixels;
+    private Thread t;
+    protected boolean running = false;
+    private boolean calculating = false;
 
     /**
      * Constructs a setup for the mandelbrot generator. A palette of colours is generated using the hue as variable
@@ -93,5 +96,16 @@ public class Mandelbrot {
             return 0;
         else
             return palette[count%palette.length];
+    }
+
+    public synchronized void start() {
+        running = true;
+        t = new Thread(this);
+        t.start();
+    }
+    @Override
+    public void run() {
+        calculating = true;
+        generateMandelbrot();
     }
 }

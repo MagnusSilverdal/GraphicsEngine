@@ -1,5 +1,5 @@
 import TwoDPrimitives.Point;
-import samples.Mandelbrot;
+import samples.*;
 
 /**
  * A class representing the pixel of the graphics as an integer-array. All updating and rendering
@@ -9,7 +9,7 @@ public class Screen {
     private int width;
     private int height;
     private int[] pixels;
-
+    private Samples samples;
     /**
      * Constructor for the Screen. Creates an array with all pixels of the display, width x height.
      * @param w width of the screen
@@ -19,23 +19,21 @@ public class Screen {
         this.width = w;
         this.height = h;
         this.pixels = new int[w*h];
+        samples = new Samples(w,h);
     }
 
     /**
      * Updates all elements of the graphics. Called before the rendering-method renders them into the pixel-array
      */
     public void update() {
-
+        samples.update();
     }
 
     /**
      * Renders all elements of the graphics. Called after the update-method is done updating all elements
      */
     public void render() {
-        // Randomly scatter magenta coloured pixels on the screen
-        Point p = new Point((int)(Math.random()*(width)),(int)(Math.random()*(height)),0xFF00FF);
-        p.draw(pixels,width);
-
+        samples.render(pixels);
     }
 
     /**
@@ -47,11 +45,10 @@ public class Screen {
     }
 
     /**
-     * Calculate and generate a pixelarray representing the mandelbrot set
+     * Getter for screen-width
+     * @return int representing width of screen in pixels
      */
-    private void generateMandelbrot() {
-        Mandelbrot mb = new Mandelbrot(width,height);
-        mb.generateMandelbrot();
-        pixels = mb.getMandelbrotImage();
+    public int getWidth() {
+        return width;
     }
 }
