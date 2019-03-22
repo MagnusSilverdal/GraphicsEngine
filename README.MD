@@ -9,7 +9,7 @@ lösningar inte duger.
 # Problemformulering
 Skapa ett system i Java för att hantera grafik. Systemet ska kunna rendera grafik i 2 och 3 dimensioner och ska utgå från
 native-java (inga externa bibliotek). Målet är att ha verktyg för att effektivt hantera och rita pixlar, linjer, polygoner och bilder i 2d,
-samt att hantera och rendera 3d-grafik baserad på noder och ytor (vertex resp face) i t.ex filformaten off eller obj. Systemet bör
+samt att hantera och rendera 3d-grafik baserad på noder och ytor (vertex resp  face) i t.ex filformaten off eller obj. Systemet bör
 hantera wireframe och solid rendering, gärna med någon form av shading (ljussättning) eller texturer.
 
 # TODO
