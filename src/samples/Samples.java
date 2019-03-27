@@ -1,5 +1,6 @@
 package samples;
 
+import TwoDPrimitives.Line;
 import TwoDPrimitives.Point;
 
 /**
@@ -79,6 +80,9 @@ public class Samples {
                 for (int i = 0 ; i < pixels.length ; i++) {
                     pixels[i] = 0;
                 }
+                Line l = new Line(points[0],points[1]);
+                l.draw(pixels,width);
+                break;
         }
     }
 }

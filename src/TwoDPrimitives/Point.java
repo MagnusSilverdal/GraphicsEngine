@@ -49,4 +49,36 @@ public class Point {
             screen[y * width + x] = col;
         }
     }
+
+    /**
+     * Getter for x-ccordinate
+     * @return in, the x-coordinate
+     */
+    public int getX() {
+        return x;
+    }
+
+    /**
+     * Getter for y-ccordinate
+     * @return in, the y-coordinate
+     */
+    public int getY() {
+        return y;
+    }
+
+    /**
+     * Setter for x-coordinate
+     * @param x new coordinate as int
+     */
+    public void setX(int x) {
+        this.x = x;
+    }
+
+    /**
+     * Setter for y-coordinate
+     * @param y new coordinate as int
+     */
+    public void setY(int y) {
+        this.y = y;
+    }
 }
