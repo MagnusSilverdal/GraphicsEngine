@@ -32,7 +32,7 @@ public class Line {
     }
 
     /**
-     * Method to draw the line on the screen. This is an implementation of the
+     * Method to draw the line on the screen. This is an implementation of the <a href="https://en.wikipedia.org/wiki/Digital_differential_analyzer_(graphics_algorithm)">DDA algorithm</a>
      * @see <a href="https://en.wikipedia.org/wiki/Digital_differential_analyzer_(graphics_algorithm)">DDA algorithm</a>
      * @param pixels the accessible pixels store in an int-array
      * @param width of the drawable area as an int
