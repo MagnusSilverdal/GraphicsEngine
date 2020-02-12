@@ -16,6 +16,7 @@ public class Samples {
 
     private Point[] points = new Point[10];
     private Mandelbrot m;
+    private Julia j;
     private Thread t;
     private MovingLine ml;
 
@@ -29,6 +30,7 @@ public class Samples {
             points[i] = new Point((int) (Math.random() * (width)), (int) (Math.random() * (height)), 0xFF00FF);
         }
         m = new Mandelbrot(width,height);
+        j = new Julia(width, height);
         ml = new MovingLine();
     }
 
@@ -50,7 +52,7 @@ public class Samples {
                 counter++;
                 break;
             case 1:
-                // start a thread to calcultae a mandelbrot set
+                // start a thread to calculate a mandelbrot set
                 if (!m.running) {
                     m.start();
                 }
@@ -62,6 +64,18 @@ public class Samples {
                 counter++;
                 break;
             case 2:
+            // start a thread to calculate a julia set
+            if (!j.running) {
+                j.start();
+            }
+            if (counter > 300) {
+                state++;
+                counter = 0;
+                updated = true;
+            }
+            counter++;
+            break;
+            case 3:
                 // Animate a line
                 ml.move();
                 updated = true;
@@ -93,6 +107,17 @@ public class Samples {
                 }
                 break;
             case 2:
+                if (updated) {
+                    clear(screen);
+                    updated = false;
+                }
+                p = j.getJuliaImage();
+                pixels = screen.getPixels();
+                for (int i = 0 ; i < p.length ; i++) {
+                    pixels[i] = p[i];
+                }
+                break;
+            case 3:
                 if (updated) {
                     if (counter == 1) {
                         clear(screen);
