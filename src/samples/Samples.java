@@ -2,6 +2,7 @@ package samples;
 
 import TwoDPrimitives.Line;
 import TwoDPrimitives.Point;
+import GarphicsEngine.Screen;
 
 /**
  * Examples of the graphics engine in action.
@@ -71,21 +72,22 @@ public class Samples {
 
     /**
      * Render the pixels from the example to the screen
-     * @param pixels int[] representing the pixels of the screen
+     * @param screen int[] representing the pixels of the screen
      */
-    public void render(int[] pixels) {
+    public void render(Screen screen) {
         switch (state) {
             case 0:
                 for (int i = 0; i < 10; i++) {
-                    points[i].draw(pixels, width);
+                    points[i].draw(screen);
                 }
                 break;
             case 1:
                 if (updated) {
-                    clear(pixels);
+                    clear(screen);
                     updated = false;
                 }
                 int[] p = m.getMandelbrotImage();
+                int[] pixels = screen.getPixels();
                 for (int i = 0 ; i < p.length ; i++) {
                     pixels[i] = p[i];
                 }
@@ -93,13 +95,13 @@ public class Samples {
             case 2:
                 if (updated) {
                     if (counter == 1) {
-                        clear(pixels);
+                        clear(screen);
                     } else {
-                        fade(pixels);
+                        fade(screen);
                     }
                 }
                 Line l = ml.getLine();
-                l.draw(pixels,width);
+                l.draw(screen);
                 break;
             default:
         }
@@ -107,9 +109,10 @@ public class Samples {
 
     /**
      * Clear the screen by sett in all pixels to 0
-     * @param pixels An array of ints representing pixels on display
+     * @param s An the Screen containing an array of ints representing pixels on display
      */
-    private void clear(int[] pixels) {
+    private void clear(Screen s) {
+        int[] pixels = s.getPixels();
         for (int i = 0 ; i < pixels.length ; i++) {
             pixels[i] = 0;
         }
@@ -117,9 +120,10 @@ public class Samples {
 
     /**
      * Clear the screen by sett in all pixels to 0
-     * @param pixels An array of ints representing pixels on display
+     * @param s An the Screen containing an array of ints representing pixels on display
      */
-    private void fade(int[] pixels) {
+    private void fade(Screen s) {
+        int [] pixels = s.getPixels();
         // 0x010101
         int fade =(65536+256+1);
         fade *=2;

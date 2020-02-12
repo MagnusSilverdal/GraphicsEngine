@@ -1,4 +1,4 @@
-# GraphicsEngine
+# GarphicsEngine.GraphicsEngine
 
 Ett projekt för att visa hur utvecklingsprocessen kan se ut när programmeraren arbetar med något som hen inte ännu behärskar.
 Det betyder att det inte är möjligt att planera och förutse den slutliga lösningen på det sätt som förväntas av en programmerare

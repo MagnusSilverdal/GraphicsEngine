@@ -1,5 +1,7 @@
 package TwoDPrimitives;
 
+import GarphicsEngine.Screen;
+
 /**
  * Point representation i 2D. A point knows it's coordinates (x,y) and if needed a colour.
  */
@@ -42,11 +44,11 @@ public class Point {
     /**
      * Draws the Point to a screen. Sets the corresponding index in the int array to the colour of the point
      * @param screen integer array of pixel data for the screen
-     * @param width the width of the screen in pixels. Needed as offset in the array.
      */
-    public void draw(int[] screen, int width) {
-        if (y * width + x < screen.length) {
-            screen[y * width + x] = col;
+    public void draw(Screen screen) {
+        int[] pixels = screen.getPixels();
+        if (y * screen.getWidth() + x < pixels.length) {
+            pixels[y * screen.getWidth() + x] = col;
         }
     }
 

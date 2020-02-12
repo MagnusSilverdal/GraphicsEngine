@@ -1,5 +1,7 @@
 package TwoDPrimitives;
 
+import GarphicsEngine.Screen;
+
 /**
  * An line represented by a start- and an endpoint. A line can have colour but if omitted it is defaulted to white
  */
@@ -34,10 +36,9 @@ public class Line {
     /**
      * Method to draw the line on the screen. This is an implementation of the <a href="https://en.wikipedia.org/wiki/Digital_differential_analyzer_(graphics_algorithm)">DDA algorithm</a>
      * @see <a href="https://en.wikipedia.org/wiki/Digital_differential_analyzer_(graphics_algorithm)">DDA algorithm</a>
-     * @param pixels the accessible pixels store in an int-array
-     * @param width of the drawable area as an int
+     * @param screen contains the accessible pixels store in an int-array
      */
-    public void draw(int[] pixels, int width) {
+    public void draw(Screen screen) {
         int dx,dy,k;
         double xc,yc,x,y,steps;
         Point drawablePoint;
@@ -57,7 +58,7 @@ public class Line {
             y=y+yc;
             drawablePoint.setX((int)x);
             drawablePoint.setY((int)y);
-            drawablePoint.draw(pixels,width);
+            drawablePoint.draw(screen);
         }
     }
 }

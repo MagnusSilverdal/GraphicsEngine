@@ -1,3 +1,5 @@
+package GarphicsEngine;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferStrategy;
@@ -6,7 +8,7 @@ import java.awt.image.DataBufferInt;
 
 /**
  * The container for the graphics, based on a Swing Canvas and using an int-array to control pixels.
- * Everything in the GraphicsEngine library is separated from Swing, and at a later stage Swing can be
+ * Everything in the GarphicsEngine.GraphicsEngine library is separated from Swing, and at a later stage Swing can be
  * replaced by another technique to access the graphics-hardware.
  */
 public class GraphicsEngine extends Canvas implements Runnable{
@@ -21,7 +23,7 @@ public class GraphicsEngine extends Canvas implements Runnable{
     private boolean running = false;
 
     /**
-     * Constructor to create a JFrame and add the GraphicsEngine to it.
+     * Constructor to create a JFrame and add the GarphicsEngine.GraphicsEngine to it.
      * @param title is the title in the windowbar
      */
     public GraphicsEngine(String title) {
@@ -100,14 +102,14 @@ public class GraphicsEngine extends Canvas implements Runnable{
     }
 
     /**
-     * Update all screen data. Calls the update method in Screen
+     * Update all screen data. Calls the update method in GarphicsEngine.Screen
      */
     private void update() {
         screen.update();
     }
 
     /**
-     * Renders the graphics to the screen. Using a buffer strategy the Screen render method i called and then all data
+     * Renders the graphics to the screen. Using a buffer strategy the GarphicsEngine.Screen render method i called and then all data
      * is copied to the image which is finally drawn on the screen
      */
     public void render() {
@@ -127,14 +129,5 @@ public class GraphicsEngine extends Canvas implements Runnable{
         g.drawImage(image, 0, 0, WIDTH, HEIGTH, null);
         g.dispose();
         bs.show();
-    }
-
-    /**
-     * A main to enable testing of the graphics
-     * @param args not used at this stage
-     */
-    public static void main(String[] args) {
-        GraphicsEngine ge = new GraphicsEngine("Graphics Engine test");
-        ge.start();
     }
 }
